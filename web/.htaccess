@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    Redirect 301 /redlight-hotelhenry/web/index http://localhost/redlight-hotelhenry/web/
+    Redirect 301 /redlight-hotelhenry/web/index.html http://localhost/redlight-hotelhenry/web/
+
+    RewriteCond %{REQUEST_URI} /admin
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.php [QSA,L]
+
+    RewriteCond %{REQUEST_URI} /rest
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.php [QSA,L]
+
+    RewriteCond %{REQUEST_URI} /ajax
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.php [QSA,L]
+
+    RewriteCond %{REQUEST_URI} /data/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.php [QSA,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.php [QSA,L]
+</IfModule>

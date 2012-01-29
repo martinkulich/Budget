@@ -1,0 +1,8 @@
+homepage:
+    pattern:        /
+    defaults:       { _controller: ChamicBudgetBundle:Default:index }
+
+
+ChamicBudgetBundle:
+    resource: "@ChamicBudgetBundle/Resources/config/routing.yml"
+    prefix:   /
